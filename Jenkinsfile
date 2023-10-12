@@ -41,10 +41,11 @@ pipeline{
         steps{
             withSonarQubeEnv('sonar'){
                 sh """
-                ${scannerHome}/bin/sonar-scanner
-                    -Dsonar.projectKey=crudproject \
-                    -Dsonar.host.url=http://44.212.16.212 \
-                    -Dsonar.login=f53a2a0e630c68af3ee0f8bf4cb2372f54aaf2f5
+                ${scannerHome}/bin/sonar-scanner \
+                -Dsonar.projectKey=crudproject \
+                -Dsonar.host.url=http://44.212.16.212 \
+                -Dsonar.login=f53a2a0e630c68af3ee0f8bf4cb2372f54aaf2f5 \
+                -Dsonar.sources=src
                 """
             }
         }
