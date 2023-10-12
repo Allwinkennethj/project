@@ -41,14 +41,6 @@ pipeline{
             SONAR_LOGIN = '3ce4f49c643fcf9992f491a0d5c73881a1fe488f'
         }
         steps {
-            script {
-                // Modify SonarQube settings if needed
-                // For example:
-                // env.SONAR_PROJECT_KEY = 'newprojectkey'
-                // env.SONAR_HOST_URL = 'http://newsonarserverurl'
-                // env.SONAR_LOGIN = 'newsonarlogintoken'
-            }
-            
             withSonarQubeEnv('sonar') {
                 sh """
                 ${scannerHome}/bin/sonar-scanner \
