@@ -31,12 +31,12 @@ pipeline {
                 sh 'mvn checkstyle:checkstyle'
             }
         }
-        stage('Install npm'){
-            steps{
-                sh 'npm install'
-                sh 'sonar-scanner'
-            }
-        }
+        // stage('Install npm'){
+        //     steps{
+        //         sh 'npm install'
+        //         sh 'sonar-scanner'
+        //     }
+        // }
         stage('SonarQube Analysis') {
             environment {
                 SONAR_PROJECT_KEY = 'crudproject'
