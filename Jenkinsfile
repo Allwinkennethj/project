@@ -10,25 +10,31 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Allwinkennethj/project.git'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'mvn clean install'
-            }
-            post {
-                success {
-                    echo 'Archiving artifacts now'
-                    archiveArtifacts artifacts: '**/*.jar';
-                }
-            }
-        }
-        stage('Unit Tests') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-        stage('Checkstyle Analysis') {
-            steps {
-                sh 'mvn checkstyle:checkstyle'
+        // stage('Build') {
+        //     steps {
+        //         sh 'mvn clean install'
+        //     }
+        //     post {
+        //         success {
+        //             echo 'Archiving artifacts now'
+        //             archiveArtifacts artifacts: '**/*.jar';
+        //         }
+        //     }
+        // }
+        // stage('Unit Tests') {
+        //     steps {
+        //         sh 'mvn test'
+        //     }
+        // }
+        // stage('Checkstyle Analysis') {
+        //     steps {
+        //         sh 'mvn checkstyle:checkstyle'
+        //     }
+        // }
+        stage('Install npm'){
+            steps{
+                sh 'npm install'
+                sh 'sonar-scanner'
             }
         }
         stage('SonarQube Analysis') {
