@@ -31,6 +31,26 @@ pipeline {
                 sh 'mvn checkstyle:checkstyle'
             }
         }
+        stage('Docker build') {
+            steps {
+                sh 'docker build -t my-app'
+            }
+        }
+        stage('Docker login') {
+            steps {
+                sh 'docker login -u allwinkennethj -p J@ck#kord82qrnm7ptv' 
+            }
+        }
+        stage('Docker tag') {
+            steps {
+                sh 'docker tag allwinkennethj/my-app'
+            }
+        }
+        stage('Docker image push') {
+            steps {
+                sh 'docker push allwinkennethj/my-app'
+            }
+        }
         // stage('SonarQube Analysis') {
         //     environment {
         //         SONAR_PROJECT_KEY = 'crudproject'
@@ -49,5 +69,6 @@ pipeline {
         //         }
         //     }
         // }
+        stage
     }
 }
