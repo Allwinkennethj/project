@@ -43,7 +43,7 @@ pipeline {
         }
         stage('Docker tag') {
             steps {
-                sh 'docker tag allwinkennethj/my-app'
+                sh 'docker tag allwinkennethj/my-app .'
             }
         }
         stage('Docker image push') {
