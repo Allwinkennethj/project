@@ -39,6 +39,7 @@ pipeline{
             SONAR_PROJECT_KEY = 'crudproject'
             SONAR_HOST_URL = 'http://44.212.16.212'
             SONAR_LOGIN = '3ce4f49c643fcf9992f491a0d5c73881a1fe488f'
+            scannerHome=tool 'sonarserver'
         }
         steps {
             withSonarQubeEnv('sonar') {
@@ -56,7 +57,7 @@ pipeline{
     node {
         stage('SonarQube Analysis') {
             // Define the scannerHome variable and set up SonarQube environment
-            def scannerHome
+            def scannerHome=tool 'sonarserver'
             withSonarQubeEnv('sonar') {
                 // The scannerHome variable will be automatically set by withSonarQubeEnv
                 // You can directly use it within this block
