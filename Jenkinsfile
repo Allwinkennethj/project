@@ -39,7 +39,7 @@ pipeline {
                 scannerHome = tool 'sonarserver'
             }
             steps {
-                withSonarQubeEnv('sonar') {
+                withSonarQubeEnv('sonarserver') {
                     sh """
                     \${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=\${SONAR_PROJECT_KEY} \
