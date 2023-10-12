@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment{
+
+    }
     tools{
         maven "MAVEN35"
         jdk "OracleJDK17"
