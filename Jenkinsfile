@@ -31,29 +31,23 @@ pipeline {
                 sh 'mvn checkstyle:checkstyle'
             }
         }
-        // stage('Install npm'){
-        //     steps{
-        //         sh 'npm install'
-        //         sh 'sonar-scanner'
+        // stage('SonarQube Analysis') {
+        //     environment {
+        //         SONAR_PROJECT_KEY = 'crudproject'
+        //         SONAR_HOST_URL = 'http://44.212.16.212'
+        //         SONAR_LOGIN = '3ce4f49c643fcf9992f491a0d5c73881a1fe488f'
+        //         scannerHome = tool 'sonarserver'
+        //     }
+        //     steps {
+        //         withSonarQubeEnv('sonarserver') {
+        //             sh """
+        //             \${scannerHome}/bin/sonar-scanner \
+        //                 -Dsonar.projectKey=\${SONAR_PROJECT_KEY} \
+        //                 -Dsonar.host.url=\${SONAR_HOST_URL} \
+        //                 -Dsonar.login=\${SONAR_LOGIN}
+        //             """
+        //         }
         //     }
         // }
-        stage('SonarQube Analysis') {
-            environment {
-                SONAR_PROJECT_KEY = 'crudproject'
-                SONAR_HOST_URL = 'http://44.212.16.212'
-                SONAR_LOGIN = '3ce4f49c643fcf9992f491a0d5c73881a1fe488f'
-                scannerHome = tool 'sonarserver'
-            }
-            steps {
-                withSonarQubeEnv('sonarserver') {
-                    sh """
-                    \${scannerHome}/bin/sonar-scanner \
-                        -Dsonar.projectKey=\${SONAR_PROJECT_KEY} \
-                        -Dsonar.host.url=\${SONAR_HOST_URL} \
-                        -Dsonar.login=\${SONAR_LOGIN}
-                    """
-                }
-            }
-        }
     }
 }
