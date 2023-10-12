@@ -10,7 +10,7 @@ pipeline{
     stages{
        stage('Fetch Code'){
         steps{
-            git branch: 'main',url:'https://github.com/Allwinkennethj/simple_onlyjava.git'
+            git branch: 'main',url:'https://github.com/Allwinkennethj/project.git'
         }
        } 
        stage('Build'){
@@ -52,5 +52,21 @@ pipeline{
             }
         }
        }
+    }
+    node {
+        stage('SonarQube Analysis') {
+            // Define the scannerHome variable and set up SonarQube environment
+            def scannerHome
+            withSonarQubeEnv('sonar') {
+                // The scannerHome variable will be automatically set by withSonarQubeEnv
+                // You can directly use it within this block
+                sh """
+                \${scannerHome}/bin/sonar-scanner \
+                    -Dsonar.projectKey=crudproject \
+                    -Dsonar.host.url=http://44.212.16.212 \
+                    -Dsonar.login=3ce4f49c643fcf9992f491a0d5c73881a1fe488f
+                """
+            }
+        }
     }
 }
