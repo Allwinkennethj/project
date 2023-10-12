@@ -35,17 +35,27 @@ pipeline{
         }
        }
        stage('Sonar Analysis'){
-        environment{
-            scannerHome=tool 'sonarserver'
+        environment {
+            SONAR_PROJECT_KEY = 'crudproject'
+            SONAR_HOST_URL = 'http://44.212.16.212'
+            SONAR_LOGIN = '3ce4f49c643fcf9992f491a0d5c73881a1fe488f'
         }
-        steps{
-            withSonarQubeEnv('sonar'){
+        steps {
+            script {
+                // Modify SonarQube settings if needed
+                // For example:
+                // env.SONAR_PROJECT_KEY = 'newprojectkey'
+                // env.SONAR_HOST_URL = 'http://newsonarserverurl'
+                // env.SONAR_LOGIN = 'newsonarlogintoken'
+            }
+            
+            withSonarQubeEnv('sonar') {
                 sh """
                 ${scannerHome}/bin/sonar-scanner \
                     mvn sonar:sonar \
-                        -Dsonar.projectKey=crudproject \
-                        -Dsonar.host.url=http://44.212.16.212 \
-                        -Dsonar.login=3ce4f49c643fcf9992f491a0d5c73881a1fe488f
+                    -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                    -Dsonar.host.url=${SONAR_HOST_URL} \
+                    -Dsonar.login=${SONAR_LOGIN}
                 """
             }
         }
