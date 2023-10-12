@@ -38,7 +38,7 @@ pipeline {
                 SONAR_LOGIN = '3ce4f49c643fcf9992f491a0d5c73881a1fe488f'
             }
             steps {
-                def scannerHome = tool 'sonarserver'
+                scannerHome = tool 'sonarserver'
                 withSonarQubeEnv('sonar') {
                     sh """
                     \${scannerHome}/bin/sonar-scanner \
