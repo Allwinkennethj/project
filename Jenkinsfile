@@ -33,7 +33,7 @@ pipeline {
         }
         stage('Docker build') {
             steps {
-                sh 'docker build -t my-app'
+                sh 'docker buildx build -t my-app .'
             }
         }
         stage('Docker login') {
