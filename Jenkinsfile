@@ -42,7 +42,6 @@ pipeline{
             withSonarQubeEnv('sonar'){
                 sh """
                 ${scannerHome}/bin/sonar-scanner
-                mvn sonar:sonar \
                     -Dsonar.projectKey=crudproject \
                     -Dsonar.host.url=http://44.212.16.212 \
                     -Dsonar.login=f53a2a0e630c68af3ee0f8bf4cb2372f54aaf2f5
