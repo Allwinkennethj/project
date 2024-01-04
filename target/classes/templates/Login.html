@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+<div class="image-logo-top-left">
+    <image src="../static/images/Divum_Logo.jpeg" style="height: 80px;"></image>
+</div>
+<div class="space2lines">
+</div>
+<div class="login-whole">
+    <form method="get" id="loginform">
+        <div class="inside-login-whole">
+            <div>
+                <label for="loginpagehead" id="loginpagehead">Login</label>
+            </div>
+            <div class="data-of-form">
+                <label>Email</label>
+            </div>
+            <div class="data-of-form">
+                <input type="text" placeholder="Enter your email" id="emailforlogin">
+            </div>
+            <div class="data-of-form">
+                <span id="emailerrorlogin"></span>
+            </div>
+
+            <div class="data-of-form">
+                <label>Password</label>
+            </div>
+            <div class="data-of-form">
+                <input type="password" placeholder="Enter your password" id="passwordforlogin">
+            </div>
+            <div class="data-of-form">
+                <span id="passworderrorlogin">Eg:Allwin123</span>
+            </div>
+
+            <div>
+                <input type="submit" id="submit" value="submit">
+                <input type="button" value="Clear" id="clearbuttonlogin" onclick="clearbutton()">
+                <input type="button" value="SignUp" id="signupbuttonlogin" onclick="switchtosignup()">
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../static/js/scriptlogin.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/home/allwin/learning_spring_check/project/src/main/java/com/crud/crudproject/repository/AuthRepo.java
+/home/allwin/learning_spring_check/project/src/main/java/com/crud/crudproject/controller/AuthController.java
+/home/allwin/learning_spring_check/project/src/main/java/com/crud/crudproject/model/Registration.java
+/home/allwin/learning_spring_check/project/src/main/java/com/crud/crudproject/service/AuthService.java
+/home/allwin/learning_spring_check/project/src/main/java/com/crud/crudproject/model/Auth.java
+/home/allwin/learning_spring_check/project/src/main/java/com/crud/crudproject/controller/HomeController.java
+/home/allwin/learning_spring_check/project/src/main/java/com/crud/crudproject/repository/JpaRepo.java
+/home/allwin/learning_spring_check/project/src/main/java/com/crud/crudproject/CrudprojectApplication.java
+/home/allwin/learning_spring_check/project/src/main/java/com/crud/crudproject/service/HomeService.java

@@ -1,0 +1,11 @@
+com/crud/crudproject/controller/HomeController.class
+com/crud/crudproject/CrudprojectApplication.class
+com/crud/crudproject/controller/AuthController.class
+com/crud/crudproject/model/Auth$AuthBuilder.class
+com/crud/crudproject/repository/AuthRepo.class
+com/crud/crudproject/service/AuthService.class
+com/crud/crudproject/model/Registration$RegistrationBuilder.class
+com/crud/crudproject/model/Auth.class
+com/crud/crudproject/repository/JpaRepo.class
+com/crud/crudproject/model/Registration.class
+com/crud/crudproject/service/HomeService.class
